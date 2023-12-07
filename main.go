@@ -13,7 +13,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-const banner = "prom-target 0.0"
+const banner = "elder-kettle 0.0"
 
 var (
 	guyRandom = prometheus.NewGauge(
@@ -28,7 +28,7 @@ func getRoot(ww http.ResponseWriter, rr *http.Request) {
 	log.Println("get root")
 	ww.Header().Set("Content-Type", "text/html")
 	ww.WriteHeader(http.StatusOK)
-	fmt.Fprintf(ww, "Welcome to PromTarget")
+	fmt.Fprintf(ww, banner)
 }
 
 func updateMetrics() {
