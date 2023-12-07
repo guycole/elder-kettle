@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elder-kettle
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/path: '/metrics'
+    prometheus.io/port: '80'
+  labels:
+    app: elder-kettle
+spec:
+  replicas: 1            
+  selector:
+    matchLabels:
+      app: elder-kettle  
+  template:
+    metadata:
+      labels:
+        app: elder-kettle
+    spec:
+      containers:
+      - name: elder-kettle 
+        image: replace_me.dkr.ecr.us-west-2.amazonaws.com/elder-kettle:latest
+        imagePullPolicy: Always
