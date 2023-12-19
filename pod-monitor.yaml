@@ -2,13 +2,12 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: elder-kettle
-  namespace: default
   labels:
-    demo: test
+    app: elder-kettle
+    release: kp
 spec:
   selector:
     matchLabels:
       app: elder-kettle
   podMetricsEndpoints:
-  - port: '80'
-    path: '/metrics'
+  - path: '/metrics'
