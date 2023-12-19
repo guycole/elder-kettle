@@ -10,4 +10,4 @@ spec:
     matchLabels:
       app: elder-kettle
   podMetricsEndpoints:
-  - path: '/metrics'
+  - interval: 15s
