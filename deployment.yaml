@@ -4,6 +4,7 @@ metadata:
   name: elder-kettle
   labels:
     app: elder-kettle
+    
 spec:
   replicas: 1            
   selector:
